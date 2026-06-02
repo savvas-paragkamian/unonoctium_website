@@ -22,9 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch CV repo
-        run: git clone --depth 1 https://github.com/savvas-paragkamian/Curriculum_Vitae.git _cv
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -34,9 +31,7 @@ jobs:
         run: pip install bibtexparser pyyaml
 
       - name: Convert publications
-        run: |
-          cp _cv/publications.bib data/publications.bib
-          python scripts/bib2data.py data/publications.bib data/publications.yaml
+        run: python scripts/bib2data.py data/publications.bib data/publications.yaml
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
