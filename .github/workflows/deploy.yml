@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  repository_dispatch:
+    types: [cv_updated]
   workflow_dispatch:
 
 permissions:
@@ -19,6 +21,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Fetch CV repo
+        run: git clone --depth 1 https://github.com/savvas-paragkamian/Curriculum_Vitae.git _cv
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install bib dependencies
+        run: pip install bibtexparser pyyaml
+
+      - name: Convert publications
+        run: |
+          cp _cv/publications.bib data/publications.bib
+          python scripts/bib2data.py data/publications.bib data/publications.yaml
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
