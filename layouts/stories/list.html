@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="section-page">
+  <header class="section-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="story-item">
+    <h2 class="story-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    {{ if .Summary }}
+    <p class="story-summary">{{ .Summary }}</p>
+    {{ end }}
+    <p class="index-meta">{{ .Date.Format "2 January 2006" }}</p>
+  </article>
+  {{ else }}
+  <p class="empty-state">No stories yet.</p>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,23 @@
+lang_switch:      "EN"
+lang_switch_href: "/en/"
+
+tagline:     "Υπολογιστικός βιολόγος · Μικροβιώματα · Δίκτυα · Βιοποικιλότητα"
+affiliation: "Πανεπιστήμιο Κρήτης & ΕΛΚΕΘΕ"
+
+nav_bits:         "Bits"
+nav_stories:      "Ιστορίες"
+nav_publications: "Δημοσιεύσεις"
+nav_about:        "Σχετικά"
+nav_notes:        "Σημειώσεις"
+
+all_stories:      "Όλες οι ιστορίες →"
+all_bits:         "Όλα τα bits →"
+all_publications: "Όλες οι δημοσιεύσεις →"
+
+pub_section_article:  "Άρθρα σε περιοδικά"
+pub_section_preprint: "Προεκτυπώσεις"
+pub_section_thesis:   "Διδακτορική διατριβή"
+pub_section_book:     "Βιβλία & Κεφάλαια"
+
+footer_source: "Πηγαίος κώδικας"
+footer_oldlog: "Παλιό blog"

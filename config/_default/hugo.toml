@@ -1,0 +1,45 @@
+baseURL = "https://www.unonoctium.gr/"
+title   = "Savvas Paragkamian"
+
+enableRobotsTXT = true
+disableKinds    = ["taxonomy", "term"]
+
+# Markdown renderer
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.highlight]
+  noClasses = false
+
+# Multilingual
+defaultContentLanguage         = "en"
+defaultContentLanguageInSubdir = false   # EN at root, EL at /el/
+
+[languages.en]
+  label      = "English"
+  weight     = 1
+  contentDir = "content/en"
+
+[languages.el]
+  label      = "Ελληνικά"
+  weight     = 2
+  contentDir = "content/el"
+
+# Menus (same for both languages; i18n keys used for labels)
+[menus]
+  [[menus.main]]
+    name       = "Research"
+    pageRef    = "/research"
+    weight     = 10
+  [[menus.main]]
+    name       = "Publications"
+    pageRef    = "/publications"
+    weight     = 20
+  [[menus.main]]
+    name       = "Notes"
+    pageRef    = "/notes"
+    weight     = 30
+  [[menus.main]]
+    name       = "CV"
+    url        = "/cv.pdf"
+    weight     = 40

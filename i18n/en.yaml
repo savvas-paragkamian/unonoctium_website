@@ -1,0 +1,23 @@
+lang_switch:      "EL"
+lang_switch_href: "/el/"
+
+tagline:     "Computational biologist · Microbiomes · Networks · Biodiversity"
+affiliation: "University of Crete & HCMR"
+
+nav_bits:         "Bits"
+nav_stories:      "Stories"
+nav_publications: "Publications"
+nav_about:        "About"
+nav_notes:        "Notes"
+
+all_stories:      "All stories →"
+all_bits:         "All bits →"
+all_publications: "All publications →"
+
+pub_section_article:  "Journal Articles"
+pub_section_preprint: "Preprints"
+pub_section_thesis:   "Thesis"
+pub_section_book:     "Books & Chapters"
+
+footer_source: "Source"
+footer_oldlog: "Old blog"

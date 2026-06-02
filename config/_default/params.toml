@@ -1,0 +1,12 @@
+[author]
+  name        = "Savvas Paragkamian"
+  affiliation = "University of Crete & HCMR"
+  email       = "s.paragamian@gmail.com"
+  github      = "savvas-paragkamian"
+  orcid       = ""          # fill in when available
+  scholar     = ""          # Google Scholar profile ID
+
+[site]
+  logo        = "/logo.svg"
+  blogspot    = "https://unonoctium.blogspot.com"
+  cvRepo      = "https://github.com/savvas-paragkamian/Curriculum_Vitae"

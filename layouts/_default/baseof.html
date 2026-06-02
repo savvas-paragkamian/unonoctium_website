@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+{{ partial "head.html" . }}
+<body>
+
+{{/* Sidebar toggle — must be first sibling so CSS ~ selector reaches overlay + sidebar */}}
+<input type="checkbox" id="menu-toggle" class="sr-only" aria-hidden="true">
+<label for="menu-toggle" class="sidebar-overlay" aria-hidden="true"></label>
+<aside class="sidebar" aria-label="Site navigation">
+  {{ partial "sidebar.html" . }}
+</aside>
+
+<div class="site-wrap">
+  <a class="skip-link sr-only" href="#main">Skip to content</a>
+  {{ partial "nav.html" . }}
+  <main id="main">
+    {{- block "main" . }}{{- end }}
+  </main>
+  <hr class="site-rule">
+  {{ partial "footer.html" . }}
+</div>
+
+{{/* Sticky nav border on scroll — 3 lines, no deps */}}
+<script>
+(function(){var n=document.querySelector('nav');window.addEventListener('scroll',function(){n.classList.toggle('nav-scrolled',window.scrollY>8);},{passive:true});})();
+</script>
+
+</body>
+</html>

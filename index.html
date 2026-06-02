@@ -1,83 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> Unonoctium </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="This is the personal webpage of Unonoctium">
-  <meta name="keywords" content="canyon, climbing, canyoning, explorations, caving, exploring">
+  <title>Savvas Paragkamian</title>
+  <meta name="description" content="Computational biologist — microbiomes, networks, biodiversity">
   <meta name="author" content="Savvas Paragkamian">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #F7F4EE;
+      --ink:     #1A1A18;
+      --ink-mid: #555550;
+      --ink-dim: #888880;
+      --amber:   #F7BC00;
+    }
+
+    html { font-size: 18px; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      min-height: 100vh;
+    }
+
+    /* ── Navigation ─────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+    }
+
+    .nav-brand {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .lang-switch {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.10em;
+      color: var(--ink-dim);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .lang-switch:hover { border-bottom-color: var(--ink-dim); }
+
+    /* ── Hero ───────────────────────────────────── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: min(420px, 82vw);
+      height: auto;
+      display: block;
+      /* subtle entrance feel — no JS needed */
+      opacity: 1;
+    }
+
+    .hero-name {
+      margin-top: 2.8rem;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: normal;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .hero-tagline {
+      margin-top: 0.9rem;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    .hero-links {
+      margin-top: 2.2rem;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-links a {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.80rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink-dim);
+      padding-bottom: 1px;
+    }
+
+    .hero-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+    /* ── Section divider ────────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid #DDDAD3;
+      margin: 0 3rem;
+    }
+
+    /* ── Footer ─────────────────────────────────── */
+    footer {
+      padding: 2.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-dim);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--ink-mid); }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (max-width: 600px) {
+      nav { padding: 1.4rem 1.4rem; }
+      .nav-links { gap: 1.4rem; }
+      .hero { padding: 2rem 1.4rem 4rem; }
+      hr { margin: 0 1.4rem; }
+      footer { padding: 1.8rem 1.4rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-  <h1 style="text-align: center">New home for Unonoctium</h1>
-  <br>
-  
-  </div>
-  <br>
-  <div class="container">
-    <p class="text-justify"> This is the new Andro of Unonoctium. After 10 years hosted in <a href="http://unonoctium.blogspot.com">Google blogspot</a> the time has come for a new website. The goal is to use tools like R, SQL, HTML, JS, python to present canyons and explorations. </p>
-  </div>
-  
+<nav>
+  <a class="nav-brand" href="/">Unonoctium</a>
+  <ul class="nav-links">
+    <li><a href="/research">Research</a></li>
+    <li><a href="/publications">Publications</a></li>
+    <li><a href="/notes">Notes</a></li>
+    <li><a href="/cv.pdf">CV</a></li>
+  </ul>
+  <a class="lang-switch" href="/el/">EL</a>
+</nav>
 
- <div id="mapid" style="width=100%";"></div>
-    	<script>
+<main class="hero">
+  <img class="hero-logo" src="logo.svg" alt="Unonoctium — balloon with network" width="700" height="820">
 
-	var mymap = L.map('mapid').setView([35.3307, 25.2820], 13);
+  <h1 class="hero-name">Savvas Paragkamian</h1>
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/streets-v11'
-	}).addTo(mymap);
+  <p class="hero-tagline">
+    Computational biologist · Microbiomes · Networks · Biodiversity<br>
+    University of Crete &amp; HCMR
+  </p>
 
-	L.marker([35.3307, 25.2820]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+  <ul class="hero-links">
+    <li><a href="https://github.com/savvas-paragkamian">GitHub</a></li>
+    <li><a href="https://orcid.org/">ORCID</a></li>
+    <li><a href="https://scholar.google.com/">Scholar</a></li>
+    <li><a href="mailto:s.paragamian@gmail.com">Email</a></li>
+  </ul>
+</main>
 
-	L.circle([35.3307, 25.2820], 500, {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
+<hr>
 
-	L.polygon([
-		[35.2307, 25.8820],
-		[35.4307, 26.2820],
-		[35.8307, 25.9820]
-	]).addTo(mymap).bindPopup("I am a polygon.");
+<footer>
+  <span class="footer-copy">© Savvas Paragkamian — CC0</span>
+  <ul class="footer-links">
+    <li><a href="https://unonoctium.blogspot.com">Old blog</a></li>
+    <li><a href="https://github.com/savvas-paragkamian/unonoctium_website">Source</a></li>
+  </ul>
+</footer>
 
-
-	var popup = L.popup();
-
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent("You clicked the map at " + e.latlng.toString())
-			.openOn(mymap);
-	}
-
-	mymap.on('click', onMapClick);
-
-	</script>
-
-
-</div>
-    
 </body>
 </html>

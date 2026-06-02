@@ -1,0 +1,29 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# Python
+*.pyc
+__pycache__/
+
+# Secrets
+.env
+
+# macOS
+.DS_Store
+.DS_Store?
+
+# Claude Code session files
+.claude/
+
+# Intermediate design files (logo.svg / logo.png are the finals)
+kitrino-mpaloni-new.png
+kitrino-mpaloni-new.svg
+
+# Old blog archive — large binaries, tracked separately if needed
+Welcome_to_my_Andron/

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="about{{ if .Params.photo }} about--has-photo{{ end }}">
+
+  {{ with .Params.photo }}
+  <aside class="about-photo">
+    <img src="{{ . }}" alt="{{ $.Site.Params.author.name }}" width="800" height="800">
+  </aside>
+  {{ end }}
+
+  <div class="about-body">
+    <header class="about-header">
+      <h1>{{ .Site.Params.author.name }}</h1>
+      <p class="about-affiliation">{{ .Site.Params.author.affiliation }}</p>
+    </header>
+    <div class="about-content">
+      {{ .Content }}
+    </div>
+  </div>
+
+</article>
+{{ end }}

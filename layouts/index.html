@@ -1,0 +1,92 @@
+{{ define "main" }}
+
+{{/* ── Hero ── */}}
+<div class="hero">
+  <img class="hero-logo"
+       src="/logo.svg"
+       alt="Unonoctium"
+       width="700" height="820"
+       aria-hidden="true">
+  <h1 class="hero-name">{{ .Site.Params.author.name }}</h1>
+  <p class="hero-tagline">
+    {{ i18n "tagline" }}<br>
+    {{ i18n "affiliation" }}
+  </p>
+</div>
+
+{{/* ── Section feed ── */}}
+<div class="index-feed">
+
+  {{/* Stories */}}
+  {{ $stories := where .Site.RegularPages "Section" "stories" }}
+  {{ if $stories }}
+  <section class="index-section">
+    <h2 class="index-label">{{ i18n "nav_stories" }}</h2>
+    {{ range first 2 $stories }}
+    <article class="index-story">
+      <h3 class="index-story-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h3>
+      {{ if .Summary }}
+      <p class="index-story-summary">{{ .Summary }}</p>
+      {{ end }}
+      <p class="index-meta">{{ .Date.Format "2 January 2006" }}</p>
+    </article>
+    {{ end }}
+    <a class="index-more" href="{{ "/stories/" | relLangURL }}">{{ i18n "all_stories" }}</a>
+  </section>
+  {{ end }}
+
+  {{/* Bits */}}
+  {{ $bits := where .Site.RegularPages "Section" "bits" }}
+  {{ if $bits }}
+  <section class="index-section">
+    <h2 class="index-label">{{ i18n "nav_bits" }}</h2>
+    <ul class="index-bits">
+      {{ range first 6 $bits }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <span class="index-meta">{{ .Date.Format "Jan 2006" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+    <a class="index-more" href="{{ "/bits/" | relLangURL }}">{{ i18n "all_bits" }}</a>
+  </section>
+  {{ end }}
+
+  {{/* Publications */}}
+  {{ $allPubs := index hugo.Data "publications" | default slice }}
+  {{ $pubs := where $allPubs "type" "article" | first 3 }}
+  {{ if $pubs }}
+  <section class="index-section">
+    <h2 class="index-label">{{ i18n "nav_publications" }}</h2>
+    {{ range $pubs }}
+    <div class="index-pub">
+      <p class="index-pub-title">
+        {{ if .doi }}
+        <a href="https://doi.org/{{ .doi }}">{{ .title }}</a>
+        {{ else }}{{ .title }}{{ end }}
+      </p>
+      <p class="index-meta">{{ .journal }} · {{ .year }}</p>
+    </div>
+    {{ end }}
+    <a class="index-more" href="{{ "/publications/" | relLangURL }}">{{ i18n "all_publications" }}</a>
+  </section>
+  {{ end }}
+
+  {{/* Notes */}}
+  {{ $notes := where .Site.RegularPages "Section" "notes" }}
+  {{ if $notes }}
+  <section class="index-section">
+    <h2 class="index-label">{{ i18n "nav_notes" }}</h2>
+    <ul class="index-bits">
+      {{ range first 4 $notes }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+</div>
+
+{{ end }}

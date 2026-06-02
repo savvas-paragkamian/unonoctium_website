@@ -1,0 +1,15 @@
+[workspace]
+authors = ["savvas-paragkamian <s.paragkamian@gmail.com>"]
+channels = ["conda-forge"]
+name = "unonoctium_website"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+cairosvg = ">=2.9.0,<3"
+hugo = ">=0.162.1,<0.163"
+bibtexparser = ">=1.4.4,<2"
+requests = ">=2.34.2,<3"
+python-dotenv = ">=1.2.2,<2"

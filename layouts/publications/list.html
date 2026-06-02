@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="section-page">
+  <header class="section-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ $allPubs := index hugo.Data "publications" | default slice }}
+
+  {{ range slice "article" "preprint" "thesis" "book" }}
+  {{ $type  := . }}
+  {{ $group := where $allPubs "type" $type }}
+  {{ if $group }}
+  <section class="pub-section">
+    <h2 class="pub-section-title">{{ i18n (printf "pub_section_%s" $type) }}</h2>
+    {{ range $group }}
+    <div class="pub-item">
+      <p class="pub-title">
+        {{ if .doi }}
+        <a href="https://doi.org/{{ .doi }}">{{ .title }}</a>
+        {{ else if .url }}
+        <a href="{{ .url }}">{{ .title }}</a>
+        {{ else }}
+        {{ .title }}
+        {{ end }}
+      </p>
+      <p class="pub-meta">
+        {{ delimit .authors ", " }}
+        {{ with .journal }} · <em>{{ . }}</em>{{ end }}
+        {{ with .year }} · {{ . }}{{ end }}
+      </p>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ if not $allPubs }}
+  <p class="empty-state">Publications loading — add <code>data/publications.bib</code> and run <code>make pubs</code>.</p>
+  {{ end }}
+
+</div>
+{{ end }}
