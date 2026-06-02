@@ -2,7 +2,7 @@ PIXI   := pixi run
 HUGO   := $(PIXI) hugo
 PY     := $(PIXI) python
 
-BIB_SRC  := data/publications.bib
+BIB_SRC  := publications.bib
 BIB_OUT  := data/publications.yaml
 
 .PHONY: dev build pubs container stop clean
