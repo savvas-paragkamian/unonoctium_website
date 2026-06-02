@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="section-page">
+  <header class="section-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  <ul class="bits-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li class="bit-item">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="index-meta">{{ .Date.Format "2 Jan 2006" }}</span>
+    </li>
+    {{ else }}
+    <li class="empty-state">No bits yet.</li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
