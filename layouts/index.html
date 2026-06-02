@@ -25,7 +25,7 @@
     {{ range first 2 $stories }}
     <article class="index-story">
       <h3 class="index-story-title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </h3>
       {{ if .Summary }}
       <p class="index-story-summary">{{ .Summary }}</p>
@@ -45,7 +45,7 @@
     <ul class="index-bits">
       {{ range first 6 $bits }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         <span class="index-meta">{{ .Date.Format "Jan 2006" }}</span>
       </li>
       {{ end }}
@@ -81,7 +81,7 @@
     <h2 class="index-label">{{ i18n "nav_notes" }}</h2>
     <ul class="index-bits">
       {{ range first 4 $notes }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
   </section>

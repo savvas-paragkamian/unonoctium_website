@@ -8,7 +8,7 @@
   {{ range .Pages.ByDate.Reverse }}
   <article class="story-item">
     <h2 class="story-title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h2>
     {{ if .Summary }}
     <p class="story-summary">{{ .Summary }}</p>
