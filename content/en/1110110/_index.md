@@ -3,7 +3,7 @@ title: "1110110"
 description: "Live system state — data, infrastructure, activity"
 
 counters:
-  - value: "2,341,012"
+  - value: "7"
     label: "co-first collaborators"
   - value: "62"
     label: "metagenomes processed"
