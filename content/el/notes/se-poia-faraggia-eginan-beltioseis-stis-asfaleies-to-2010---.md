@@ -1,10 +1,10 @@
 ---
-        title: "Σε ποια φαράγγια έγιναν βελτιώσεις στις ασφάλειες το 2010 - Bolting improvement in the canyons of Crete, Greece"
-        date: 2010-12-31
-        tags: ["canyoning", "misc", "rigging"]
-        ---
+title: "Σε ποια φαράγγια έγιναν βελτιώσεις στις ασφάλειες το 2010 - Bolting improvement in the canyons of Crete, Greece"
+date: 2010-12-31
+tags: ["canyoning", "misc", "rigging"]
+---
 
-        [
+[
 
 ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiP0Vid78Kk4XIdSjy-5W1DwdyMQO9sp2bUn_8YMbo1ZFO2jwVGP0ibsJ-Cl98Cdebc-9OloHiNUMXsnjWTJQGluLYkvGpcPzQwYXH-lAejMIToAoZetxEYlTQ1TKHvexMhg8LLzrcXpw8N/s1600/ethiano+kart.jpg)
 *Ο Μιχάλης Καρτσώνης βελτιώνει ένα *
