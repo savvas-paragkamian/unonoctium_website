@@ -707,6 +707,41 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+/* ── Symbol / Unonoctium page ───────────────────── */
+.symbol-page {
+  max-width: var(--measure);
+  margin: 5rem auto;
+  padding: 0 var(--gap);
+  text-align: center;
+}
+
+.symbol-logo {
+  margin-bottom: 4rem;
+}
+
+.symbol-logo img {
+  width: min(280px, 60vw);
+  height: auto;
+  display: inline-block;
+}
+
+.symbol-body {
+  text-align: left;
+}
+
+.symbol-body p {
+  margin-bottom: 1.6em;
+  line-height: 1.8;
+}
+
+.symbol-body strong {
+  font-weight: 600;
+}
+
+.symbol-body em {
+  font-style: italic;
+}
+
 /* ── CV page ────────────────────────────────────── */
 .cv-page {
   max-width: calc(var(--measure) + 8ch);

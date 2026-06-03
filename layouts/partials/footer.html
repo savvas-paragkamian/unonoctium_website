@@ -1,6 +1,7 @@
 <footer>
   <span class="footer-copy">© {{ .Site.Params.author.name }} — CC0</span>
   <ul class="footer-links">
+    <li><a href="{{ "/unonoctium/" | relLangURL }}">{{ i18n "footer_symbol" }}</a></li>
     <li><a href="{{ "/notes/" | relLangURL }}">{{ i18n "nav_notes" }}</a></li>
     <li><a href="{{ "/cv/" | relLangURL }}">{{ i18n "footer_cv" }}</a></li>
     <li><a href="{{ .Site.Params.site.blogspot }}">{{ i18n "footer_oldlog" }}</a></li>

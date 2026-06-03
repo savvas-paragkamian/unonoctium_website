@@ -24,6 +24,7 @@ pub_section_preprint: "Προεκτυπώσεις"
 pub_section_thesis:   "Διδακτορική διατριβή"
 pub_section_book:     "Βιβλία & Κεφάλαια"
 
+footer_symbol: "Unonoctium"
 footer_source: "Πηγαίος κώδικας"
 footer_oldlog: "My Andron (παλιό)"
 footer_cv:     "Βιογραφικό"

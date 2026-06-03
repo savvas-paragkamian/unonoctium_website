@@ -24,6 +24,7 @@ pub_section_preprint: "Preprints"
 pub_section_thesis:   "Thesis"
 pub_section_book:     "Books & Chapters"
 
+footer_symbol: "Unonoctium"
 footer_source: "Source"
 footer_oldlog: "My Andron (old)"
 footer_cv:     "CV"
