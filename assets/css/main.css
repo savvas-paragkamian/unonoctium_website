@@ -688,6 +688,46 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+/* ── CV page ────────────────────────────────────── */
+.cv-page {
+  max-width: calc(var(--measure) + 8ch);
+  margin: 5rem auto;
+  padding: 0 var(--gap);
+}
+
+.cv-header {
+  margin-bottom: 2.4rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.cv-body h2 {
+  margin: 2.8rem 0 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.60rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv-body p      { margin-bottom: 0.9em; line-height: 1.65; }
+.cv-body strong { font-weight: 600; }
+.cv-body em     { font-style: italic; }
+.cv-body a      { border-bottom: 1px solid var(--rule); }
+.cv-body a:hover { border-bottom-color: var(--mid); }
+.cv-body hr     { border: none; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
+
 /* ── Print ──────────────────────────────────────── */
 @media print {
   nav, .sidebar, .sidebar-overlay, .sr-only, footer { display: none; }

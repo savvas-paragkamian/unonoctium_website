@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="cv-page">
+  <header class="cv-header">
+    <h1>{{ .Site.Params.author.name }}</h1>
+    {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
+  </header>
+  <div class="cv-body page-body">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}
