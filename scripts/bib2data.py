@@ -40,6 +40,9 @@ def entry_to_dict(e):
     if any(x in journal.lower() for x in ["biorxiv", "ecoevorxiv", "arxiv", "preprint"]):
         etype = "preprint"
 
+    doi = clean(e.get("doi", ""))
+    doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi)
+
     return {
         "key":      e.get("ID", ""),
         "type":     etype,
@@ -47,7 +50,7 @@ def entry_to_dict(e):
         "authors":  parse_authors(e.get("author", "")),
         "year":     int(e.get("year", 0) or 0),
         "journal":  journal,
-        "doi":      clean(e.get("doi", "")),
+        "doi":      doi,
         "url":      clean(e.get("url", "")),
     }
 
