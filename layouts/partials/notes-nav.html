@@ -11,25 +11,19 @@
 
   <a href="{{ "/notes/" | relLangURL }}" class="notes-nav-all">All notes</a>
 
-  {{/* Collect unique sorted tags across all notes in this language */}}
-  {{ $allNotes := where .Site.RegularPages "Section" "notes" }}
-  {{ $tags := slice }}
-  {{ range $allNotes }}
-    {{ range .Params.tags }}
-      {{ $tags = $tags | append . }}
-    {{ end }}
-  {{ end }}
-  {{ $tags = $tags | uniq | sort }}
-  {{ if $tags }}
+  {{/* Curated activity tags — edit this list to change navigation tags */}}
+  {{ $navTags := cond (eq .Site.Language.Lang "el")
+      (slice "σπηλαιολογία" "canyoning" "ασφάλιση" "αποστολή" "πεζοπορία" "οικολογία" "πεδίο" "συνέδριο" "μουσική" "αναμνήσεις")
+      (slice "canyoning" "speleology" "rigging" "expedition" "trekking" "ecology" "fieldwork" "conservation" "conference" "music")
+  }}
   <div class="notes-nav-tag-section">
     <span class="notes-nav-label">Tags</span>
     <div class="notes-nav-tags">
-      {{ range $tags }}
+      {{ range $navTags }}
       <button class="notes-nav-tag" data-tag="{{ . }}" type="button">{{ . }}</button>
       {{ end }}
     </div>
   </div>
-  {{ end }}
 
 </nav>
 
@@ -55,7 +49,6 @@
   }
 
   if (listPage) {
-    // read ?q= from URL on page load
     var qs = new URLSearchParams(window.location.search);
     if (qs.get('q')) { input.value = qs.get('q'); }
     input.addEventListener('input', applyFilter);
@@ -76,7 +69,6 @@
       });
     });
   } else {
-    // single note page — redirect to list with search query
     input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && input.value.trim()) {
         window.location.href = '{{ "/notes/" | relLangURL }}?q=' + encodeURIComponent(input.value.trim());
