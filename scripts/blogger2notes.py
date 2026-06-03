@@ -106,10 +106,16 @@ def html_to_md(raw: str) -> str:
 
 def slugify(title: str) -> str:
     t = title.lower()
-    # Transliterate common Greek letters for URL safety
-    _map = str.maketrans("αβγδεζηθικλμνξοπρσςτυφχψωάέήίόύώϊϋΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΆΈΉΊΌΎΏ",
-                         "abgdezithiklmnxoprsstayfhpsoadhioyoabgdezithiklmnxoprstyfhpsoadhioyo")
-    t = t.translate(_map)
+    # Transliterate Greek → ASCII (1-to-1 mapping only; complex chars drop)
+    pairs = [
+        ("ά", "a"), ("έ", "e"), ("ή", "i"), ("ί", "i"), ("ό", "o"), ("ύ", "u"), ("ώ", "o"),
+        ("α", "a"), ("β", "b"), ("γ", "g"), ("δ", "d"), ("ε", "e"), ("ζ", "z"), ("η", "i"),
+        ("θ", "th"), ("ι", "i"), ("κ", "k"), ("λ", "l"), ("μ", "m"), ("ν", "n"), ("ξ", "x"),
+        ("ο", "o"), ("π", "p"), ("ρ", "r"), ("σ", "s"), ("ς", "s"), ("τ", "t"), ("υ", "u"),
+        ("φ", "f"), ("χ", "h"), ("ψ", "ps"), ("ω", "o"), ("ϊ", "i"), ("ϋ", "u"),
+    ]
+    for src, dst in pairs:
+        t = t.replace(src, dst)
     t = re.sub(r"[^\w\s-]", "",  t)
     t = re.sub(r"[\s_]+",   "-", t)
     t = t.strip("-")[:60]
@@ -160,20 +166,27 @@ def parse_posts(skip_all: bool = False) -> list[dict]:
 # ── Write note files ──────────────────────────────────────────────────────────
 
 def tags_yaml(tags: list[str]) -> str:
-    return ", ".join(f'"{t}"' for t in tags)
+    # Clean tag strings: remove problematic characters
+    safe = []
+    for t in tags:
+        # Remove quotes and special chars, keep alphanumeric + spaces/hyphens
+        t_clean = t.replace('"', '').replace("'", '')
+        t_clean = re.sub(r'[^\w\s-]', '', t_clean)
+        t_clean = t_clean.strip()
+        if t_clean and len(t_clean) < 50:
+            safe.append(t_clean)
+    return ", ".join(f'"{t}"' for t in safe) if safe else '""'
 
 
 def write_el(post: dict, slug: str, dry_run: bool) -> Path:
     path = EL_NOTES / f"{slug}.md"
-    content = dedent(f"""\
-        ---
-        title: "{post['title'].replace('"', '\\"')}"
-        date: {post['date']}
-        tags: [{tags_yaml(post['tags'])}]
-        ---
+    content = f"""---
+title: "{post['title'].replace('"', '\\"')}"
+date: {post['date']}
+tags: [{tags_yaml(post['tags'])}]
+---
 
-        {post['body']}
-    """).lstrip()
+{post['body']}"""
     if dry_run:
         print(f"  [dry] would write {path.relative_to(REPO)}")
     else:
@@ -184,15 +197,13 @@ def write_el(post: dict, slug: str, dry_run: bool) -> Path:
 
 def write_en(post: dict, slug: str, dry_run: bool) -> Path:
     path = EN_NOTES / f"{slug}.md"
-    content = dedent(f"""\
-        ---
-        title: "{post['title'].replace('"', '\\"')}"
-        date: {post['date']}
-        tags: ["ai-translated"]
-        ---
+    content = f"""---
+title: "{post['title'].replace('"', '\\"')}"
+date: {post['date']}
+tags: ["ai-translated"]
+---
 
-        *(Original in Greek — see [ελληνική έκδοση](/el/notes/{slug}/))*
-    """).lstrip()
+*(Original in Greek — see [ελληνική έκδοση](/el/notes/{slug}/))*"""
     if dry_run:
         print(f"  [dry] would write {path.relative_to(REPO)}")
     else:
@@ -207,7 +218,10 @@ def git_commit(files: list[Path], message: str, dry_run: bool):
         return
     rel = [str(f.relative_to(REPO)) for f in files]
     subprocess.run(["git", "add"] + rel, cwd=REPO, check=True)
-    subprocess.run(["git", "commit", "-m", message], cwd=REPO, check=True)
+    # Only commit if there are actual changes
+    result = subprocess.run(["git", "commit", "-m", message], cwd=REPO, capture_output=True)
+    if result.returncode != 0 and b"nothing to commit" not in result.stdout:
+        raise subprocess.CalledProcessError(result.returncode, result.args)
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
