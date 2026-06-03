@@ -671,7 +671,7 @@ footer {
   align-items: start;
 }
 
-.note-body { }
+.note-body { order: 1; }
 
 .note-sidebar {
   position: sticky;
@@ -755,13 +755,30 @@ footer {
 
 /* ── Responsive notes ────────────────────────────── */
 @media (max-width: 780px) {
+  /* single note: stack sidebar ABOVE body */
   .note-layout {
     grid-template-columns: 1fr;
-    gap: 2.4rem;
+    gap: 2rem;
   }
-  .note-sidebar { position: static; flex-direction: row; flex-wrap: wrap; gap: 1.4rem 2.4rem; }
-  .note-list-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .note-list-meta { text-align: left; }
+  .note-sidebar {
+    position: static;
+    order: -1;                       /* move above body on mobile */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  /* make tags tappable on mobile */
+  .note-tag {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.7rem;
+  }
+  /* list: stack date below title */
+  .note-list-item { grid-template-columns: 1fr; gap: 0.4rem; }
+  .note-list-meta { text-align: left; padding-top: 0; }
+  /* tighten note page margin */
+  .note-page { margin-top: 3rem; margin-bottom: 3rem; }
 }
 
 /* ── 1110110 Dashboard ──────────────────────────── */
