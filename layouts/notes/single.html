@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="note-page">
+  <header class="note-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <div class="note-layout">
+    <div class="note-body page-body">
+      {{ .Content }}
+    </div>
+
+    <aside class="note-sidebar">
+      <div class="note-sidebar-item">
+        <span class="note-sidebar-label">Date</span>
+        <span class="note-sidebar-value">{{ .Date.Format "2 January 2006" }}</span>
+      </div>
+
+      {{ with .Section }}
+      <div class="note-sidebar-item">
+        <span class="note-sidebar-label">Category</span>
+        <span class="note-sidebar-value">{{ . }}</span>
+      </div>
+      {{ end }}
+
+      {{ with .Params.tags }}
+      <div class="note-sidebar-item">
+        <span class="note-sidebar-label">Tags</span>
+        <div class="note-tag-list">
+          {{ range . }}<span class="note-tag">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ with .Params.keywords }}
+      <div class="note-sidebar-item">
+        <span class="note-sidebar-label">Keywords</span>
+        <div class="note-tag-list">
+          {{ range . }}<span class="note-tag">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </aside>
+  </div>
+</div>
+{{ end }}

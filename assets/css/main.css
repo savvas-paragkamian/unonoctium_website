@@ -643,6 +643,127 @@ footer {
   .index-meta       { width: 100%; }
 }
 
+/* ── Notes single page ──────────────────────────── */
+.note-page {
+  max-width: calc(var(--measure) + 18rem);
+  margin: 5rem auto;
+  padding: 0 var(--gap);
+}
+
+.note-header {
+  margin-bottom: 2.8rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.note-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.note-layout {
+  display: grid;
+  grid-template-columns: 1fr 15rem;
+  gap: 4rem;
+  align-items: start;
+}
+
+.note-body { }
+
+.note-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.note-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.note-sidebar-label {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.note-sidebar-value {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--mid);
+}
+
+.note-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.note-tag {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.10em;
+  color: var(--dim);
+  border: 1px solid var(--rule);
+  padding: 0.15rem 0.55rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ── Notes list page ─────────────────────────────── */
+.note-list-item {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.note-list-item:first-of-type { border-top: 1px solid var(--rule); }
+
+.note-list-title {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: normal;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
+}
+.note-list-title a { border-bottom: 1px solid var(--rule); }
+.note-list-title a:hover { border-bottom-color: var(--mid); color: var(--mid); }
+
+.note-list-excerpt {
+  font-size: 0.88rem;
+  color: var(--mid);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.note-list-meta {
+  text-align: right;
+  padding-top: 0.25rem;
+}
+
+/* ── Responsive notes ────────────────────────────── */
+@media (max-width: 780px) {
+  .note-layout {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .note-sidebar { position: static; flex-direction: row; flex-wrap: wrap; gap: 1.4rem 2.4rem; }
+  .note-list-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .note-list-meta { text-align: left; }
+}
+
 /* ── 1110110 Dashboard ──────────────────────────── */
 .dashboard-counters {
   display: grid;
