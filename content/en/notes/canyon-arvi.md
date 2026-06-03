@@ -1,7 +1,7 @@
 ---
 title: "Arvi Canyon"
 date: 2008-12-27
-tags: ["canyoning", "canyon", "crete", "heraklion"]
+tags: ["canyoning", "canyon", "crete", "heraklion", "ai-translated"]
 keywords: ["Arvi", "Keratokambos", "Dikti", "canyon", "canyoning", "Crete"]
 ---
 

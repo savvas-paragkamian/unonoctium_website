@@ -1,7 +1,7 @@
 ---
 title: "Lapathos Canyon"
 date: 2009-03-11
-tags: ["canyoning", "canyon", "crete", "lasithi"]
+tags: ["canyoning", "canyon", "crete", "lasithi", "ai-translated"]
 keywords: ["Lapathos", "Agioi Apostoloi", "Dikti", "canyon", "vultures", "geology"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Cave Survey in Malaki"
 date: 2008-09-15
-tags: ["speleology", "caves", "crete", "fieldwork"]
+tags: ["speleology", "caves", "crete", "fieldwork", "ai-translated"]
 keywords: ["Malaki", "Nikiforos Fokas", "speleology", "Heraklion", "cave survey"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Psistrakis and memories"
 date: 2009-09-16
-tags: ["speleology", "memories", "friendship", "crete"]
+tags: ["speleology", "memories", "friendship", "crete", "ai-translated"]
 keywords: ["Psistrakis", "Yiannis Bromirakis", "friendship", "speleology", "mentor"]
 ---
 

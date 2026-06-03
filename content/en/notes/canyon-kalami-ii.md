@@ -1,7 +1,7 @@
 ---
 title: "Kalami II or Panagia Canyon"
 date: 2010-09-03
-tags: ["canyoning", "rigging", "crete", "heraklion"]
+tags: ["canyoning", "rigging", "crete", "heraklion", "ai-translated"]
 keywords: ["Kalami", "Panagia", "Heraklion", "rigging", "bolting", "HSS"]
 ---
 

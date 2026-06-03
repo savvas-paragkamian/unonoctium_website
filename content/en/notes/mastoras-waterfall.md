@@ -1,7 +1,7 @@
 ---
 title: "Mastoras waterfall — rigging"
 date: 2008-11-22
-tags: ["canyoning", "canyon", "crete", "rigging"]
+tags: ["canyoning", "canyon", "crete", "rigging", "ai-translated"]
 keywords: ["Mastoras", "Ha canyon", "waterfall", "rigging", "Ierapetra", "Thrypti", "Crete"]
 ---
 

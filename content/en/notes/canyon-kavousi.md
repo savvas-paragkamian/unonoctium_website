@@ -1,7 +1,7 @@
 ---
 title: "Kavousi Canyon"
 date: 2009-01-21
-tags: ["canyoning", "canyon", "crete", "lasithi"]
+tags: ["canyoning", "canyon", "crete", "lasithi", "ai-translated"]
 keywords: ["Kavousi", "Keratokambos", "Viannos", "Dikti", "canyon", "geology"]
 ---
 

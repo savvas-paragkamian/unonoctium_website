@@ -1,7 +1,7 @@
 ---
 title: "4th Pan-Cretan Speleology Symposium"
 date: 2008-11-01
-tags: ["speleology", "conference", "crete", "presentation"]
+tags: ["speleology", "conference", "crete", "presentation", "ai-translated"]
 keywords: ["Pan-Cretan Symposium", "Zoniana", "speleology", "Sitanos", "Siteia"]
 ---
 

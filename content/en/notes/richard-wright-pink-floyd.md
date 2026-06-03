@@ -1,7 +1,7 @@
 ---
 title: "Richard Wright of Pink Floyd has died"
 date: 2008-09-16
-tags: ["music", "pink-floyd", "obituary"]
+tags: ["music", "pink-floyd", "obituary", "ai-translated"]
 keywords: ["Richard Wright", "Pink Floyd", "music", "rock", "keyboards"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Portela Canyon"
 date: 2009-02-11
-tags: ["canyoning", "canyon", "crete", "heraklion"]
+tags: ["canyoning", "canyon", "crete", "heraklion", "ai-translated"]
 keywords: ["Portela", "Hondros", "Keratokambos", "Dikti", "canyon", "geology", "canyoning"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Why unonoctium?"
 date: 2008-11-28
-tags: ["reflection", "unonoctium", "chemistry", "element-118"]
+tags: ["reflection", "unonoctium", "chemistry", "element-118", "ai-translated"]
 keywords: ["unonoctium", "ununoctium", "element 118", "periodic table", "username"]
 ---
 

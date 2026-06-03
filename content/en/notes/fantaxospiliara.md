@@ -1,7 +1,7 @@
 ---
 title: "Fantaxospiliara Cave"
 date: 2008-12-21
-tags: ["speleology", "cave", "crete", "rethymno"]
+tags: ["speleology", "cave", "crete", "rethymno", "ai-translated"]
 keywords: ["Fantaxospiliara", "Rethymno", "bats", "speleology", "fossil cave river"]
 ---
 

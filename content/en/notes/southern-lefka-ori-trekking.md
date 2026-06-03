@@ -1,7 +1,7 @@
 ---
 title: "Southern White Mountains — trekking"
 date: 2008-09-29
-tags: ["trekking", "lefka-ori", "crete"]
+tags: ["trekking", "lefka-ori", "crete", "ai-translated"]
 keywords: ["White Mountains", "Koustogerako", "Fantasm gorge", "GPS", "fog", "trekking"]
 ---
 

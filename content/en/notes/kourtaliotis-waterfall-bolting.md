@@ -1,7 +1,7 @@
 ---
 title: "Bolting improvement at Kourtaliotis waterfall"
 date: 2010-08-30
-tags: ["canyoning", "rigging", "crete", "rethymno"]
+tags: ["canyoning", "rigging", "crete", "rethymno", "ai-translated"]
 keywords: ["Kourtaliotis", "Rethymno", "Agios Nikolaos", "Preveli", "waterfall", "bolting"]
 ---
 

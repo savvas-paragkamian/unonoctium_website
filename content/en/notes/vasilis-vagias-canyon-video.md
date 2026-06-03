@@ -1,7 +1,7 @@
 ---
 title: "Canyoning in Crete — Vasilis Vagias video"
 date: 2010-03-21
-tags: ["canyoning", "crete", "video"]
+tags: ["canyoning", "crete", "video", "ai-translated"]
 keywords: ["Vasilis Vagias", "video", "Portela", "Ha", "Arvi", "canyoning", "winter"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Psari 2009 expedition — Akolie Psaris −442m"
 date: 2009-08-08
-tags: ["speleology", "expedition", "cave", "crete", "chania"]
+tags: ["speleology", "expedition", "cave", "crete", "chania", "ai-translated"]
 keywords: ["Akolie Psaris", "Psari 2009", "deep cave", "White Mountains", "Chania", "geology"]
 ---
 

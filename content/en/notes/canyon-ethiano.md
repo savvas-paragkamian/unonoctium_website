@@ -1,7 +1,7 @@
 ---
 title: "Ethiano Canyon"
 date: 2009-09-15
-tags: ["canyoning", "canyon", "crete", "asterousia"]
+tags: ["canyoning", "canyon", "crete", "asterousia", "ai-translated"]
 keywords: ["Ethiano", "Ethia", "Rotasi", "Asterousia", "limestone folds", "canyoning"]
 ---
 

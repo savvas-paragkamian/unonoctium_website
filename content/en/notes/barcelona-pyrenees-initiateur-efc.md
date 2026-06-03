@@ -1,7 +1,7 @@
 ---
 title: "Barcelona, Pyrenees and Initiateur EFC"
 date: 2010-07-12
-tags: ["canyoning", "training", "france", "travel"]
+tags: ["canyoning", "training", "france", "travel", "ai-translated"]
 keywords: ["Barcelona", "Pyrenees", "EFC", "Initiateur", "canyoning", "instructor", "France"]
 ---
 

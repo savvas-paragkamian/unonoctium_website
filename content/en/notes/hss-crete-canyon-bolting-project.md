@@ -1,7 +1,7 @@
 ---
 title: "HSS Crete canyon bolting project"
 date: 2010-08-04
-tags: ["canyoning", "rigging", "crete", "hss"]
+tags: ["canyoning", "rigging", "crete", "hss", "ai-translated"]
 keywords: ["HSS", "rigging", "bolting", "canyons", "Crete", "safety", "anchors"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Kamaraiko Canyon"
 date: 2008-11-11
-tags: ["canyoning", "canyon", "crete", "psiloritis"]
+tags: ["canyoning", "canyon", "crete", "psiloritis", "ai-translated"]
 keywords: ["Kamaraiko", "Kamares", "Psiloritis", "technical canyon", "Crete"]
 ---
 

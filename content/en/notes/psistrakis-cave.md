@@ -1,7 +1,7 @@
 ---
 title: "Psistrakis Cave"
 date: 2008-11-14
-tags: ["speleology", "cave", "crete", "heraklion"]
+tags: ["speleology", "cave", "crete", "heraklion", "ai-translated"]
 keywords: ["Psistrakis", "Gonies", "Malevizi", "cave", "speleology", "Crete"]
 ---
 

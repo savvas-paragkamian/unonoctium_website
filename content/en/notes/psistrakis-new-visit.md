@@ -1,7 +1,7 @@
 ---
 title: "Psistrakis — new visit"
 date: 2009-04-16
-tags: ["speleology", "cave", "crete", "conservation"]
+tags: ["speleology", "cave", "crete", "conservation", "ai-translated"]
 keywords: ["Psistrakis", "Gonies", "Malevizi", "cave pearls", "speleology", "littering"]
 ---
 

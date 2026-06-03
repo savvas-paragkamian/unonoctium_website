@@ -1,7 +1,7 @@
 ---
 title: "Bolting improvement in Ampas canyon"
 date: 2010-08-08
-tags: ["canyoning", "rigging", "crete", "asterousia"]
+tags: ["canyoning", "rigging", "crete", "asterousia", "ai-translated"]
 keywords: ["Ampas", "Asterousia", "Paranymfoi", "Tris Ekklisies", "bolting", "anchors"]
 ---
 

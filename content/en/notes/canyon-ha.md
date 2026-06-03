@@ -1,7 +1,7 @@
 ---
 title: "Ha Canyon"
 date: 2009-01-13
-tags: ["canyoning", "canyon", "crete", "lasithi"]
+tags: ["canyoning", "canyon", "crete", "lasithi", "ai-translated"]
 keywords: ["Ha", "Ierapetra", "Thrypti", "canyon", "canyoning", "Crete", "Mastoras"]
 ---
 

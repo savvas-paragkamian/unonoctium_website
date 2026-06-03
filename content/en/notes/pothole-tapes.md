@@ -1,7 +1,7 @@
 ---
 title: "Pothole at Tapes"
 date: 2008-09-10
-tags: ["speleology", "cave", "lasithi", "crete"]
+tags: ["speleology", "cave", "lasithi", "crete", "ai-translated"]
 keywords: ["Tapes", "Latisida", "Lasithi", "HSS", "occupation", "ammunition"]
 ---
 

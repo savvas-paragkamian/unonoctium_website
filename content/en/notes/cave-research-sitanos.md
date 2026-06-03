@@ -1,7 +1,7 @@
 ---
 title: "Cave research in Sitanos"
 date: 2008-10-21
-tags: ["speleology", "lasithi", "crete", "surveying"]
+tags: ["speleology", "lasithi", "crete", "surveying", "ai-translated"]
 keywords: ["Sitanos", "Siteia", "Lasithi", "HSS", "cave survey", "Therospilios"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Wetlands of Euboea — WWF survey"
 date: 2008-12-14
-tags: ["ecology", "wetlands", "nature", "volunteering"]
+tags: ["ecology", "wetlands", "nature", "volunteering", "ai-translated"]
 keywords: ["wetlands", "Euboea", "WWF", "Myti", "Merouti", "Aegean islands"]
 ---
 
