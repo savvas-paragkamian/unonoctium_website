@@ -76,6 +76,23 @@
   </section>
   {{ end }}
 
+  {{/* Notes — latest 2 */}}
+  {{ $notes := where .Site.RegularPages "Section" "notes" }}
+  {{ if $notes }}
+  <section class="index-section">
+    <h2 class="index-label">{{ i18n "nav_notes" }}</h2>
+    <ul class="index-bits">
+      {{ range first 2 $notes }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="index-meta">{{ .Date.Format "Jan 2006" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+    <a class="index-more" href="{{ "/notes/" | relLangURL }}">{{ i18n "nav_notes" }} →</a>
+  </section>
+  {{ end }}
+
   {{/* 1110110 — latest activity */}}
   {{ $bits := where .Site.RegularPages "Section" "1110110" }}
   {{ if $bits }}

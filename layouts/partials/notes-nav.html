@@ -1,0 +1,87 @@
+<nav class="notes-nav" aria-label="Notes navigation">
+
+  <div class="notes-search-wrap">
+    <input type="search"
+           id="notes-search"
+           class="notes-search-input"
+           placeholder="Search…"
+           aria-label="Search notes"
+           autocomplete="off">
+  </div>
+
+  <a href="{{ "/notes/" | relLangURL }}" class="notes-nav-all">All notes</a>
+
+  {{/* Collect unique sorted tags across all notes in this language */}}
+  {{ $allNotes := where .Site.RegularPages "Section" "notes" }}
+  {{ $tags := slice }}
+  {{ range $allNotes }}
+    {{ range .Params.tags }}
+      {{ $tags = $tags | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $tags = $tags | uniq | sort }}
+  {{ if $tags }}
+  <div class="notes-nav-tag-section">
+    <span class="notes-nav-label">Tags</span>
+    <div class="notes-nav-tags">
+      {{ range $tags }}
+      <button class="notes-nav-tag" data-tag="{{ . }}" type="button">{{ . }}</button>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</nav>
+
+<script>
+(function () {
+  var input   = document.getElementById('notes-search');
+  var items   = document.querySelectorAll('.note-list-item');
+  var tagBtns = document.querySelectorAll('.notes-nav-tag');
+  var listPage = items.length > 0;
+  var activeTag = null;
+
+  function normalize(s) { return s.toLowerCase().replace(/[^\w\s]/g, ''); }
+
+  function applyFilter() {
+    var q = normalize(input.value.trim());
+    items.forEach(function (item) {
+      var title = normalize(item.querySelector('.note-list-title').textContent);
+      var tags  = item.dataset.tags ? normalize(item.dataset.tags) : '';
+      var matchQ   = !q || title.includes(q) || tags.includes(q);
+      var matchTag = !activeTag || tags.includes(activeTag);
+      item.style.display = (matchQ && matchTag) ? '' : 'none';
+    });
+  }
+
+  if (listPage) {
+    // read ?q= from URL on page load
+    var qs = new URLSearchParams(window.location.search);
+    if (qs.get('q')) { input.value = qs.get('q'); }
+    input.addEventListener('input', applyFilter);
+    applyFilter();
+
+    tagBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tag = btn.dataset.tag;
+        if (activeTag === tag) {
+          activeTag = null;
+          btn.classList.remove('notes-nav-tag--active');
+        } else {
+          activeTag = tag;
+          tagBtns.forEach(function (b) { b.classList.remove('notes-nav-tag--active'); });
+          btn.classList.add('notes-nav-tag--active');
+        }
+        applyFilter();
+      });
+    });
+  } else {
+    // single note page — redirect to list with search query
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && input.value.trim()) {
+        window.location.href = '{{ "/notes/" | relLangURL }}?q=' + encodeURIComponent(input.value.trim());
+      }
+    });
+  }
+})();
+</script>

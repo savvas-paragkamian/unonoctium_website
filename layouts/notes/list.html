@@ -1,31 +1,38 @@
 {{ define "main" }}
-<div class="section-page">
-  <header class="section-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
-  </header>
+<div class="notes-wrapper">
 
-  {{ range .Pages.ByDate.Reverse }}
-  <article class="note-list-item">
-    <div class="note-list-main">
-      <h2 class="note-list-title">
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h2>
-      {{ with .Summary }}
-      <p class="note-list-excerpt">{{ . }}</p>
-      {{ end }}
-      {{ with .Params.tags }}
-      <div class="note-tag-list">
-        {{ range . }}<span class="note-tag">{{ . }}</span>{{ end }}
+  {{ partial "notes-nav.html" . }}
+
+  <div class="notes-main">
+    <header class="section-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="note-list-item"
+             data-tags="{{ delimit .Params.tags " " }}">
+      <div class="note-list-main">
+        <h2 class="note-list-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        {{ with .Summary }}
+        <p class="note-list-excerpt">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.tags }}
+        <div class="note-tag-list">
+          {{ range . }}<span class="note-tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
       </div>
-      {{ end }}
-    </div>
-    <div class="note-list-meta">
-      <time class="note-sidebar-value">{{ .Date.Format "2 Jan 2006" }}</time>
-    </div>
-  </article>
-  {{ else }}
-  <p class="empty-state">No notes yet.</p>
-  {{ end }}
+      <div class="note-list-meta">
+        <time>{{ .Date.Format "2 Jan 2006" }}</time>
+      </div>
+    </article>
+    {{ else }}
+    <p class="empty-state">No notes yet.</p>
+    {{ end }}
+  </div>
+
 </div>
 {{ end }}
