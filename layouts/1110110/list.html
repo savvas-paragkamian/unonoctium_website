@@ -5,15 +5,34 @@
     {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
   </header>
 
-  <ul class="bits-list">
-    {{ range .Pages.ByDate.Reverse }}
-    <li class="bit-item">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <span class="index-meta">{{ .Date.Format "2 Jan 2006" }}</span>
-    </li>
-    {{ else }}
-    <li class="empty-state">No bits yet.</li>
+  {{ with .Params.counters }}
+  <div class="dashboard-counters">
+    {{ range . }}
+    <div class="counter-item">
+      <span class="counter-value">{{ .value }}</span>
+      <span class="counter-label">{{ .label }}</span>
+    </div>
     {{ end }}
-  </ul>
+  </div>
+  {{ end }}
+
+  {{ with .Content }}
+  <div class="dashboard-body page-body">{{ . }}</div>
+  {{ end }}
+
+  {{ if .Pages }}
+  <section class="dashboard-activity">
+    <h2 class="pub-section-title">Activity</h2>
+    <ul class="bits-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <li class="bit-item">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="index-meta">{{ .Date.Format "2 Jan 2006" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
 </div>
 {{ end }}

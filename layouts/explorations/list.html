@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="section-page">
+  <header class="section-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="exploration-item">
+    <h2 class="exploration-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    {{ with .Params.question }}
+    <p class="exploration-question">{{ . }}</p>
+    {{ end }}
+    {{ with .Summary }}
+    <p class="story-summary">{{ . }}</p>
+    {{ end }}
+  </article>
+  {{ else }}
+  <p class="empty-state">Explorations coming soon.</p>
+  {{ end }}
+</div>
+{{ end }}
