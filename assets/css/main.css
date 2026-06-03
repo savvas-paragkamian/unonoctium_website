@@ -280,6 +280,25 @@ nav.nav-scrolled { border-bottom-color: var(--rule); }
   line-height: 1.9;
 }
 
+.hero-statement {
+  margin-top: 2.4rem;
+  font-family: var(--sans);
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hero-statement-sub {
+  margin-top: 0.55rem;
+  font-family: var(--serif);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--mid);
+  line-height: 1.6;
+  max-width: 48ch;
+}
+
 .hero-links {
   margin-top: 2.4rem;
   display: flex;
