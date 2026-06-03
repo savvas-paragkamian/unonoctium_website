@@ -2,6 +2,7 @@
   <span class="footer-copy">© {{ .Site.Params.author.name }} — CC0</span>
   <ul class="footer-links">
     <li><a href="{{ "/notes/" | relLangURL }}">{{ i18n "nav_notes" }}</a></li>
+    <li><a href="{{ .Site.Params.site.cvRepo }}">{{ i18n "footer_cv" }}</a></li>
     <li><a href="{{ .Site.Params.site.blogspot }}">{{ i18n "footer_oldlog" }}</a></li>
     <li><a href="https://github.com/savvas-paragkamian/unonoctium_website">{{ i18n "footer_source" }}</a></li>
   </ul>
