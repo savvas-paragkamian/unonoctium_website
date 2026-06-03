@@ -4,7 +4,7 @@ description: "Live system state — data, infrastructure, activity"
 
 counters:
   - value: "2,341,012"
-    label: "species records curated"
+    label: "co-first collaborators"
   - value: "62"
     label: "metagenomes processed"
   - value: "14"
@@ -19,7 +19,7 @@ counters:
 
 ## Datasets
 
-Species occurrence records curated across Mediterranean and Cretan systems. Metagenomes assembled from cave, soil, and marine environments. Samples processed through standardised amplicon and shotgun protocols.
+Metagenomes assembled from cave, soil, and marine environments. Samples processed through standardised amplicon and shotgun protocols.
 
 ## Infrastructure
 
