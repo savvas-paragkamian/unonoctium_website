@@ -28,5 +28,9 @@ kitrino-mpaloni-new.svg
 # Old blog archive — large binaries, tracked separately if needed
 Welcome_to_my_Andron/
 
+# Unlinked Blogger image dump — kept on disk to place into notes later,
+# not published until an image is moved up to static/img/field/ and linked
+static/img/field/archive/
+
 # Skill/tool screenshots dropped in root
 image.png

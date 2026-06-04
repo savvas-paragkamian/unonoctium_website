@@ -5,6 +5,8 @@ tags: ["speleology", "lasithi", "crete", "surveying", "ai-translated"]
 keywords: ["Sitanos", "Siteia", "Lasithi", "HSS", "cave survey", "Therospilios"]
 ---
 
+![Mapping Therospilios cave, Sitanos](/img/field/sitanos-cave-survey.jpg)
+
 Field survey completed with Kostas Foteinakis in Sitanos (Siteia municipality, Lasithi), mapping Therospilios cave. HSS Crete Section explorations in this area began in 1993; the 2007–2008 campaign added 6 cavities:
 
 - **Therospilios** — ~1 acre total extent
