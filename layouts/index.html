@@ -32,6 +32,23 @@
   </section>
   {{ end }}
 
+  {{/* 1110110 — latest activity */}}
+  {{ $bits := where .Site.RegularPages "Section" "1110110" }}
+  {{ if $bits }}
+  <section class="index-section">
+    <h2 class="index-label">{{ i18n "nav_bits" }}</h2>
+    <ul class="index-bits">
+      {{ range first 4 $bits }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="index-meta">{{ .Date.Format "Jan 2006" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+    <a class="index-more" href="{{ "/1110110/" | relLangURL }}">{{ i18n "all_bits" }}</a>
+  </section>
+  {{ end }}
+
   {{/* Stories */}}
   {{ $stories := where .Site.RegularPages "Section" "stories" }}
   {{ if $stories }}
@@ -86,23 +103,6 @@
       {{ end }}
     </ul>
     <a class="index-more" href="{{ "/notes/" | relLangURL }}">{{ i18n "nav_notes" }} →</a>
-  </section>
-  {{ end }}
-
-  {{/* 1110110 — latest activity */}}
-  {{ $bits := where .Site.RegularPages "Section" "1110110" }}
-  {{ if $bits }}
-  <section class="index-section">
-    <h2 class="index-label">{{ i18n "nav_bits" }}</h2>
-    <ul class="index-bits">
-      {{ range first 4 $bits }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <span class="index-meta">{{ .Date.Format "Jan 2006" }}</span>
-      </li>
-      {{ end }}
-    </ul>
-    <a class="index-more" href="{{ "/1110110/" | relLangURL }}">{{ i18n "all_bits" }}</a>
   </section>
   {{ end }}
 
