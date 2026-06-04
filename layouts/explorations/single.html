@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="exploration-page">
+  {{ with .Params.image }}
+  <div class="exploration-hero" style="background-image:url('{{ . }}')"></div>
+  {{ end }}
+
+  <header class="exploration-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="section-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="exploration-body page-body">
+    {{ .Content }}
+  </div>
+
+  <p class="exploration-back">
+    <a href="{{ "/explorations/" | relLangURL }}">← {{ i18n "nav_explorations" }}</a>
+  </p>
+</article>
+{{ end }}

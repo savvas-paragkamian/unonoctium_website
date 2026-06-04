@@ -15,19 +15,23 @@
 {{/* ── Section feed ── */}}
 <div class="index-feed">
 
-  {{/* Explorations */}}
+  {{/* Explorations — image cards */}}
   {{ $explorations := where .Site.RegularPages "Section" "explorations" }}
   {{ if $explorations }}
   <section class="index-section">
     <h2 class="index-label">{{ i18n "nav_explorations" }}</h2>
-    <ul class="index-bits">
-      {{ range first 4 $explorations }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{ with .Params.question }}<span class="index-meta">{{ . }}</span>{{ end }}
-      </li>
+    <div class="exploration-grid">
+      {{ range first 4 (sort $explorations "Weight") }}
+      <a class="exploration-card" href="{{ .RelPermalink }}">
+        {{ with .Params.image }}
+        <span class="exploration-card-img" style="background-image:url('{{ . }}')"></span>
+        {{ end }}
+        <span class="exploration-card-cap">
+          <span class="exploration-card-title">{{ .Title }}</span>
+        </span>
+      </a>
       {{ end }}
-    </ul>
+    </div>
     <a class="index-more" href="{{ "/explorations/" | relLangURL }}">{{ i18n "all_explorations" }}</a>
   </section>
   {{ end }}

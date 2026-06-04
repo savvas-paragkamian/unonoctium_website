@@ -966,29 +966,94 @@ footer {
 
 .dashboard-activity { margin-top: 3.5rem; }
 
-/* ── Explorations ───────────────────────────────── */
-.exploration-item {
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--rule);
+/* ── Explorations — image grid ──────────────────── */
+.explorations-page {
+  max-width: calc(var(--measure) + 22rem);
+  margin: 5rem auto;
+  padding: 0 var(--gap);
 }
 
-.exploration-title {
+.exploration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.exploration-card {
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  border-bottom: none;
+}
+.exploration-card-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--rule);
+  filter: grayscale(18%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+.exploration-card:hover .exploration-card-img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+.exploration-card-cap { display: block; padding: 0.7rem 0.1rem 0; }
+.exploration-card-title {
+  display: block;
   font-family: var(--serif);
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  font-weight: normal;
+  font-size: 1.05rem;
   letter-spacing: -0.01em;
-  line-height: 1.3;
-  margin-bottom: 0.4rem;
+  line-height: 1.25;
 }
-.exploration-title a { border-bottom: 1px solid var(--rule); }
-.exploration-title a:hover { border-bottom-color: var(--mid); }
-
-.exploration-question {
+.exploration-card:hover .exploration-card-title { color: var(--mid); }
+.exploration-card-sub {
+  display: block;
+  margin-top: 0.2rem;
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--dim);
-  font-style: italic;
-  margin-bottom: 0.5rem;
+}
+
+/* ── Explorations — single page ─────────────────── */
+.exploration-page {
+  max-width: var(--measure);
+  margin: 4rem auto 5rem;
+  padding: 0 var(--gap);
+}
+.exploration-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--rule);
+  border-radius: 2px;
+  margin-bottom: 2.2rem;
+}
+.exploration-head { margin-bottom: 2rem; }
+.exploration-head h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.exploration-back {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.exploration-back a { color: var(--dim); }
+.exploration-back a:hover { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .exploration-card:hover .exploration-card-img { transform: none; }
 }
 
 /* ── Symbol / Unonoctium page ───────────────────── */

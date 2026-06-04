@@ -1,22 +1,25 @@
 {{ define "main" }}
-<div class="section-page">
+<div class="explorations-page">
   <header class="section-header">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
   </header>
 
-  {{ range .Pages.ByDate.Reverse }}
-  <article class="exploration-item">
-    <h2 class="exploration-title">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h2>
-    {{ with .Params.question }}
-    <p class="exploration-question">{{ . }}</p>
+  {{ $pages := .Pages.ByWeight }}
+  {{ if $pages }}
+  <div class="exploration-grid">
+    {{ range $pages }}
+    <a class="exploration-card" href="{{ .RelPermalink }}">
+      {{ with .Params.image }}
+      <span class="exploration-card-img" style="background-image:url('{{ . }}')"></span>
+      {{ end }}
+      <span class="exploration-card-cap">
+        <span class="exploration-card-title">{{ .Title }}</span>
+        {{ with .Params.summary }}<span class="exploration-card-sub">{{ . }}</span>{{ end }}
+      </span>
+    </a>
     {{ end }}
-    {{ with .Summary }}
-    <p class="story-summary">{{ . }}</p>
-    {{ end }}
-  </article>
+  </div>
   {{ else }}
   <p class="empty-state">Explorations coming soon.</p>
   {{ end }}
