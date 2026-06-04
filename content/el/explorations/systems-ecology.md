@@ -1,6 +1,7 @@
 ---
 title: "Συστημική οικολογία"
-weight: 7
+group: "living"
+weight: 3
 image: "/img/explorations/systems-ecology.jpg"
 summary: "Τα οικοσυστήματα ως δίκτυα."
 ---

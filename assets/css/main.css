@@ -973,11 +973,30 @@ footer {
   padding: 0 var(--gap);
 }
 
+.expl-group { margin-top: 3.5rem; }
+.expl-group:first-of-type { margin-top: 2.5rem; }
+.expl-group-title {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--rule);
+}
+.expl-group-sub {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--dim);
+  margin-top: 0.5rem;
+}
+
 .exploration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 1.6rem;
 }
 
 .exploration-card {

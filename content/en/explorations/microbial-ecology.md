@@ -1,5 +1,6 @@
 ---
 title: "Microbial ecology"
+group: "living"
 weight: 1
 image: "/img/explorations/microbial-ecology.jpg"
 summary: "From microbe to ecosystem."

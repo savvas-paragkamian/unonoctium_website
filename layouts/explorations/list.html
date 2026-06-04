@@ -5,23 +5,33 @@
     {{ with .Description }}<p class="section-desc">{{ . }}</p>{{ end }}
   </header>
 
-  {{ $pages := .Pages.ByWeight }}
-  {{ if $pages }}
-  <div class="exploration-grid">
-    {{ range $pages }}
-    <a class="exploration-card" href="{{ .RelPermalink }}">
-      {{ with .Params.image }}
-      <span class="exploration-card-img" style="background-image:url('{{ . }}')"></span>
+  {{ $ctx := . }}
+  {{ $groups := slice
+      (dict "key" "living"      "label" (i18n "expl_group_living")      "sub" "")
+      (dict "key" "observation" "label" (i18n "expl_group_observation") "sub" "")
+      (dict "key" "knowledge"   "label" (i18n "expl_group_knowledge")   "sub" (i18n "expl_group_knowledge_sub")) }}
+
+  {{ range $groups }}
+  {{ $items := where $ctx.Pages "Params.group" .key }}
+  {{ if $items }}
+  <section class="expl-group">
+    <h2 class="expl-group-title">{{ .label }}</h2>
+    {{ with .sub }}<p class="expl-group-sub">{{ . }}</p>{{ end }}
+    <div class="exploration-grid">
+      {{ range sort $items "Weight" }}
+      <a class="exploration-card" href="{{ .RelPermalink }}">
+        {{ with .Params.image }}
+        <span class="exploration-card-img" style="background-image:url('{{ . }}')"></span>
+        {{ end }}
+        <span class="exploration-card-cap">
+          <span class="exploration-card-title">{{ .Title }}</span>
+          {{ with .Params.summary }}<span class="exploration-card-sub">{{ . }}</span>{{ end }}
+        </span>
+      </a>
       {{ end }}
-      <span class="exploration-card-cap">
-        <span class="exploration-card-title">{{ .Title }}</span>
-        {{ with .Params.summary }}<span class="exploration-card-sub">{{ . }}</span>{{ end }}
-      </span>
-    </a>
-    {{ end }}
-  </div>
-  {{ else }}
-  <p class="empty-state">Explorations coming soon.</p>
+    </div>
+  </section>
+  {{ end }}
   {{ end }}
 </div>
 {{ end }}

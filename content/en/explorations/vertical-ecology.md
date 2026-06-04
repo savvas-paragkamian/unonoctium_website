@@ -1,6 +1,7 @@
 ---
 title: "Vertical ecology"
-weight: 3
+group: "observation"
+weight: 4
 image: "/img/explorations/vertical-ecology.jpg"
 summary: "Life on the cliffs."
 ---

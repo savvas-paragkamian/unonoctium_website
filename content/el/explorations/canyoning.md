@@ -1,7 +1,8 @@
 ---
-title: "Εξερευνήσεις φαραγγιών"
-weight: 4
-image: "/img/explorations/canyon-explorations.jpg"
+title: "Canyoning"
+group: "observation"
+weight: 5
+image: "/img/explorations/canyoning.jpg"
 summary: "Διαβάζοντας τα φαράγγια της Κρήτης."
 ---
 

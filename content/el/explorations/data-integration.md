@@ -1,6 +1,7 @@
 ---
 title: "Ολοκλήρωση δεδομένων"
-weight: 8
+group: "knowledge"
+weight: 7
 image: "/img/explorations/data-integration.jpg"
 summary: "Συνδέοντας διάσπαρτη γνώση."
 ---

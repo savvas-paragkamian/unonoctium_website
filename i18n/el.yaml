@@ -16,6 +16,11 @@ nav_notes:        "Σημειώσεις"
 
 all_explorations: "Όλες οι εξερευνήσεις →"
 all_stories:      "Όλες οι ιστορίες →"
+
+expl_group_living:        "Ζωντανά Συστήματα"
+expl_group_observation:   "Παρατήρηση"
+expl_group_knowledge:     "Υποδομή Γνώσης"
+expl_group_knowledge_sub: "Ανοιχτά πρότυπα και κώδικας"
 all_bits:         "Όλα τα 1110110 →"
 all_publications: "Όλες οι δημοσιεύσεις →"
 

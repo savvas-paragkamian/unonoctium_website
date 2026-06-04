@@ -1,6 +1,7 @@
 ---
 title: "Data integration"
-weight: 8
+group: "knowledge"
+weight: 7
 image: "/img/explorations/data-integration.jpg"
 summary: "Connecting scattered knowledge."
 ---

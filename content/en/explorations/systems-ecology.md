@@ -1,6 +1,7 @@
 ---
 title: "Systems ecology"
-weight: 7
+group: "living"
+weight: 3
 image: "/img/explorations/systems-ecology.jpg"
 summary: "Ecosystems as networks."
 ---

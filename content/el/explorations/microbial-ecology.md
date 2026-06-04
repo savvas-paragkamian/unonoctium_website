@@ -1,5 +1,6 @@
 ---
 title: "Μικροβιακή οικολογία"
+group: "living"
 weight: 1
 image: "/img/explorations/microbial-ecology.jpg"
 summary: "Από το μικρόβιο στο οικοσύστημα."
