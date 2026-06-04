@@ -2,11 +2,7 @@
 
 {{/* ── Hero ── */}}
 <div class="hero">
-  <img class="hero-logo"
-       src="/logo.svg"
-       alt="Unonoctium"
-       width="700" height="820"
-       aria-hidden="true">
+  {{ partial "hero-balloon.html" . }}
   <h1 class="hero-name">{{ .Site.Params.author.name }}</h1>
   <p class="hero-tagline">
     {{ i18n "tagline" }}<br>

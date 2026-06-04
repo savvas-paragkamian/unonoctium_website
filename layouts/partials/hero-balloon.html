@@ -1,0 +1,22 @@
+{{- /*
+  Inline, self-drawing version of static/logo.svg for the homepage hero.
+  Derived at build time from the single source-of-truth SVG, with animation
+  hooks injected so CSS can "hand-draw" it (stroke-dashoffset on strokes,
+  fade-in on fills). See .hero-balloon rules in assets/css/main.css.
+*/ -}}
+{{- $svg := readFile "static/logo.svg" -}}
+
+{{- /* scope + sizing class on the root element */ -}}
+{{- $svg = replaceRE `<svg ` `<svg class="hero-logo hero-balloon" role="img" aria-label="Unonoctium balloon" ` $svg -}}
+
+{{- /* normalise every line's length to 1 so one dash rule fits all */ -}}
+{{- $svg = replaceRE `<line ` `<line pathLength="1" ` $svg -}}
+
+{{- /* split the balloon fill path into a drawn outline + a fading body
+       (reuses the captured d="…" so it always matches the source path) */ -}}
+{{- $svg = replaceRE `<path (d="M 350 496[^"]*") fill="url\(#gBalloon\)"/>` `<path class="bln-outline" pathLength="1" ${1} fill="none" stroke="#C98E00" stroke-width="2" stroke-linejoin="round"/><path class="bln-body" ${1} fill="url(#gBalloon)"/>` $svg -}}
+
+{{- /* tag the dangling string (last stroked path) for its own draw pass */ -}}
+{{- $svg = replaceRE `<path (d="M 350 518[^"]*") stroke="#1A1A1A"` `<path class="bln-string" pathLength="1" ${1} stroke="#1A1A1A"` $svg -}}
+
+{{ $svg | safeHTML }}
