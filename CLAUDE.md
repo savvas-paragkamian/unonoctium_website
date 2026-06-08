@@ -5,6 +5,18 @@ Domain: www.unonoctium.gr · GitHub: savvas-paragkamian
 
 ---
 
+## Boundaries
+
+**Never access directories outside this repository.** All file reads, writes, and shell commands must stay within:
+
+```
+/Users/talos/Library/CloudStorage/Dropbox/30_resources/40_coding/unonoctium_website/
+```
+
+If source material (bib files, tex files, docs) is needed from elsewhere, ask the user to copy it into the repo first. Do not use `find /`, `find ~/`, or any path outside the repo root.
+
+---
+
 ## What this is
 
 A self-hosted static academic profile site. Hugo compiles markdown content into a `public/` directory. Podman runs an nginx container serving that output. No runtime server code, no database, no CMS.
