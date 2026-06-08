@@ -54,7 +54,8 @@
   </section>
   {{ end }}
 
-  {{/* Stories */}}
+  {{/* Stories — hidden for now; flip the `if false` below to re-enable */}}
+  {{ if false }}
   {{ $stories := where .Site.RegularPages "Section" "stories" }}
   {{ if $stories }}
   <section class="index-section">
@@ -72,6 +73,7 @@
     {{ end }}
     <a class="index-more" href="{{ "/stories/" | relLangURL }}">{{ i18n "all_stories" }}</a>
   </section>
+  {{ end }}
   {{ end }}
 
   {{/* Publications */}}
