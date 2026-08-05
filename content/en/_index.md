@@ -1,4 +1,4 @@
 ---
 title: "Savvas Paragkamian"
-description: "Computational biologist — microbiomes, networks, biodiversity"
+description: "Computational biologist — microbiomes, vertical ecology, open data"
 ---
